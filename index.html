@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <title>Matricula</title>
+</head>
+<body>
+    <main id="formulario">
+            <h1>Matricula</h1>
+        
+
+        <form  method="post" name="registro" autocomplete="on"  onsubmit="validacao(event); return false">
+            <div><i class='bx bx-user'></i>
+                <input type="text" name="nome" id="nome"  placeholder="Nome Completo" minlength="5" maxlength="50" autocomplete="name" required>
+            </div>
+            <div><i class='bx bx-calendar' ></i>
+                <input type="date" name="data" id="data"  placeholder="Data de Nascimento" autocomplete="bday-day" required>
+            </div>
+            <div><i class='bx bx-envelope' ></i>
+                <input type="email" name="email" id="email"  placeholder="nome@email.com" autocomplete="email" required pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$">
+            </div>
+            <div><i class='bx bx-phone' ></i>
+                <input type="tel" name="tfone" id="tfone"  placeholder="(DD)98765-4321" autocomplete="tel"  maxlength="15" required onkeyup="telefone(event)">
+            </div>
+            <div><i class='bx bxs-graduation' ></i>
+                <select name="serie" id="serie" required>
+                    <option value="">--Selecione uma opção--</option>
+                    <option value="1° Ensino Médio">1° Ensino Médio</option>
+                    <option value="2° Ensino Médio">2° Ensino Médio</option>
+                    <option value="3° Ensino Médio">3° Ensino Médio</option>
+                    <option value="4° Ensino Médio">4° Ensino Médio</option>
+                </select>
+            </div>
+
+            <fieldset>
+                <legend>Turno:</legend>
+                    <input type="radio" value="manha" name="turno" id="manha" class="radio">
+                        <label for="manha">Manhã</label>
+                    <input type="radio" value="tarde" name="turno" id="tarde" class="radio">
+                        <label for="tarde">Tarde</label>
+                    <input type="radio" value="noite" name="turno" id="noite" class="radio">
+                        <label for="noite">Noite</label>
+            </fieldset>
+        
+            <fieldset >
+                <legend>Atividades Extras-Curriculares</legend>
+                    <input type="checkbox" value="teatro" name="atv" id="teatro" class="check">
+                        <label for="teatro">Teatro</label>
+                    <input type="checkbox" value="musica" name="atv" id="musica" class="check">
+                        <label for="musica">Musica</label>
+                    <input type="checkbox" value="ballet" name="atv" id="ballet" class="check">
+                        <label for="ballet">Ballet</label>
+                        <br>
+                    <input type="checkbox" value="pintura" name="atv" id="pintura" class="check">
+                        <label for="pintura">Pintura</label>
+                    <input type="checkbox" value="judo" name="atv" id="judo" class="check">
+                        <label for="judo">Judô</label>
+                    <input type="checkbox" value="futebol" name="atv" id="futebol" class="check">
+                        <label for="futebol">Futebol</label>
+            </fieldset>
+            
+            <div class="botao">
+                <input type="reset" value="Limpar" name="registro" id="limpar">
+                <input type="submit" value="Enviar" id="enviar">
+            </div>
+        </form>
+
+       
+    </main>
+
+    <main id="confirm">
+        <h3>Confirme os dados da Matricula</h3>
+        <div id="res"></div>
+        <div class="botao">
+            <input type="button" value="Voltar" onclick="voltar()" id="voltar">
+            <input type="button" value="Confirmar" onclick="sucesso()" id="confirmar">
+        </div>
+    </main>
+
+    <main class="pg2" id="pg2">
+        <h1>Matricula realizada com sucesso!</h1>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+</html>
